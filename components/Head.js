@@ -1,13 +1,13 @@
 import React from "react";
-import { HeadProvider, Title, Meta } from "react-head";
+import NextHead from "next/head";
 
 const Head = ({ title, description }) => (
-  <HeadProvider>
+  <NextHead>
     <meta charSet="UTF-8" />
-    <Title>{title || ""}</Title>
-    <Meta name="description" content={description || ""} />
-    <Meta name="viewport" content="width=device-width, initial-scale=1" />
-  </HeadProvider>
+    <title>{title || ""}</title>
+    <meta name="description" content={description || ""} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </NextHead>
 );
 
 export default Head;

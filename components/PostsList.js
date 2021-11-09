@@ -24,7 +24,7 @@ const PostLists = ({ blok }) => {
               </span>
             </div>
             <div className="mt-2">
-              <Link href={`${lang}/blog/${post.slug}`}>
+              <Link href={`/blog/${post.slug}`}>
                 <a className="text-2xl text-gray-700 font-bold hover:text-gray-600">
                   {post.content.title}
                 </a>
@@ -32,7 +32,7 @@ const PostLists = ({ blok }) => {
               <p className="mt-2 text-gray-600">{post.content.intro}</p>
             </div>
             <div className="flex justify-between items-center mt-4">
-              <Link href={`${lang}/blog/${post.slug}`}>
+              <Link href={`/blog/${post.slug}`}>
                 <a className="text-blue-600 hover:underline">Read more</a>
               </Link>
             </div>
