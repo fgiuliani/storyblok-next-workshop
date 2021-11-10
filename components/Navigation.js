@@ -27,7 +27,7 @@ const Navigation = () => {
           </div>
           <div className="text-black">
             <p className="text-lg">Storyblok</p>
-            <p>React Demo</p>
+            <p>Next.js Demo</p>
           </div>
           <div className="ml-auto md:hidden">
             <button
