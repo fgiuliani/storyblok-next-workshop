@@ -8,19 +8,19 @@
     "start": "next start"
   },
   "dependencies": {
-    "@storyblok/storyblok-editable": "^1.0.0",
-    "axios": "^0.21.1",
-    "marked": "^2.0.3",
-    "next": "^12.0.3",
+    "@storyblok/js": "^1.0.3",
+    "marked": "^4.0.12",
+    "next": "12.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "storyblok-js-client": "^4.0.9"
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
-    "postcss": "^8.2.15",
-    "postcss-preset-env": "^6.7.0",
-    "storyblok-rich-text-react-renderer": "^2.3.1",
-    "tailwindcss": "^2.1.2"
+    "autoprefixer": "^10.4.2",
+    "eslint": "8.9.0",
+    "eslint-config-next": "12.1.0",
+    "postcss": "^8.4.6",
+    "postcss-preset-env": "^7.4.1",
+    "tailwindcss": "^3.0.23",
+    "storyblok-rich-text-react-renderer": "^2.5.2"
   }
 }

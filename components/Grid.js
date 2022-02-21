@@ -1,11 +1,11 @@
 import React from "react";
 import DynamicComponent from "./DynamicComponent";
-import { sbEditable } from "@storyblok/storyblok-editable";
+import { storyblokEditable } from "@storyblok/js";
 
 const Grid = ({ blok }) => (
   <ul
     className="flex py-8 mb-6 container mx-auto"
-    {...sbEditable(blok)}
+    {...storyblokEditable(blok)}
     key={blok._uid}
   >
     {blok.columns.map((nestedBlok) => (
