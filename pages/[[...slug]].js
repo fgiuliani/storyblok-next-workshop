@@ -5,11 +5,11 @@ import DynamicComponent from "../components/DynamicComponent";
 import storyblokApi, { useStoryblok } from "../lib/storyblok";
 
 export default function Page({ story }) {
-  story = useStoryblok(story);
+  const newStory = useStoryblok(story);
 
   return (
     <Layout>
-      <DynamicComponent blok={story.content} />
+      <DynamicComponent blok={newStory.content} />
     </Layout>
   );
 }
