@@ -1,5 +1,4 @@
-import React from "react";
-import { storyblokEditable } from "@storyblok/js";
+import { storyblokEditable } from "@storyblok/react";
 import Link from "next/link";
 
 const FeaturedPosts = ({ blok }) => {

@@ -1,6 +1,4 @@
-import React from "react";
-import DynamicComponent from "./DynamicComponent";
-import { storyblokEditable } from "@storyblok/js";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 
 const Grid = ({ blok }) => (
   <ul
@@ -10,7 +8,7 @@ const Grid = ({ blok }) => (
   >
     {blok.columns.map((nestedBlok) => (
       <li key={nestedBlok._uid} className="flex-auto px-6">
-        <DynamicComponent blok={nestedBlok} />
+        <StoryblokComponent blok={nestedBlok} />
       </li>
     ))}
   </ul>

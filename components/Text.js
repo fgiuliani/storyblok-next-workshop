@@ -1,5 +1,4 @@
-import React from "react";
-import { storyblokEditable } from "@storyblok/js";
+import { storyblokEditable } from "@storyblok/react";
 import { render } from "storyblok-rich-text-react-renderer";
 
 const Text = ({ blok }) => {

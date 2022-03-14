@@ -1,15 +1,18 @@
-import React from "react";
 import Layout from "../components/Layout";
-import DynamicComponent from "../components/DynamicComponent";
-
-import storyblokApi, { useStoryblok } from "../lib/storyblok";
+import {
+  useStoryblokState,
+  useStoryblokApi,
+  StoryblokComponent,
+} from "@storyblok/react";
 
 export default function Page({ story }) {
-  const newStory = useStoryblok(story);
+  const newStory = useStoryblokState(story, {
+    resolveRelations: ["featured-posts.posts", "selected-posts.posts"],
+  });
 
   return (
     <Layout>
-      <DynamicComponent blok={newStory.content} />
+      <StoryblokComponent blok={newStory.content} />
     </Layout>
   );
 }
@@ -22,17 +25,18 @@ export async function getStaticProps({ params }) {
     resolve_relations: ["featured-posts.posts", "selected-posts.posts"],
   };
 
-  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+  let { data } = await useStoryblokApi().get(`cdn/stories/${slug}`, sbParams);
 
   return {
     props: {
       story: data ? data.story : false,
+      key: data ? data.story.id : false,
     },
   };
 }
 
 export async function getStaticPaths() {
-  let { data } = await storyblokApi.get("cdn/links/");
+  let { data } = await useStoryblokApi().get("cdn/links/");
 
   let paths = [];
   Object.keys(data.links).forEach((linkKey) => {
