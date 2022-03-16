@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import {
   useStoryblokState,
-  useStoryblokApi,
+  getStoryblokApi,
   StoryblokComponent,
 } from "@storyblok/react";
 
@@ -25,7 +25,7 @@ export async function getStaticProps({ params }) {
     resolve_relations: ["featured-posts.posts", "selected-posts.posts"],
   };
 
-  let { data } = await useStoryblokApi().get(`cdn/stories/${slug}`, sbParams);
+  let { data } = await getStoryblokApi().get(`cdn/stories/${slug}`, sbParams);
 
   return {
     props: {
@@ -36,7 +36,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  let { data } = await useStoryblokApi().get("cdn/links/");
+  let { data } = await getStoryblokApi().get("cdn/links/");
 
   let paths = [];
   Object.keys(data.links).forEach((linkKey) => {
